@@ -8,7 +8,8 @@ inputs:
     required: true
     description: a value passed into the evidence
 outputs:
-  results-url: ${{ steps.do-something.outputs.url }}
+  results-url:
+    value: ${{ steps.do-something.outputs.url }}
 
 runs:
   using: composite
