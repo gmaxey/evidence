@@ -10,4 +10,5 @@ jobs:
     steps:
       - name: Call instrumented action
         uses: gmaxey/evidence/instrumented-action-example
-        in: Some text to pass on
+        with:
+          in: Some text to pass on
