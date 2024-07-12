@@ -17,8 +17,7 @@ runs:
       id: do-something
       uses: docker://golang:1.20.3-alpine3.17
       shell: sh
-      run: |
-        echo "https://example.com" > "$CLOUDBEES_OUTPUTS/url"
+      run: echo "https://example.com" > "$CLOUDBEES_OUTPUTS/url"
           
     - name: Test publish-evidence-item action
       uses: cloudbees-io/publish-evidence-item
