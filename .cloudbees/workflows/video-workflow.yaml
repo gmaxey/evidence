@@ -1,0 +1,20 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Video workflow
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    steps:
+      - name: Say hello
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "hello world"
+      - name: Evidence markdown example
+        uses: cloudbees-io/publish-evidence-item
+        with:
+          content: |
+            ## Test markup and property rendering
+            - Run ID: ${{ cloudbees.run_id }}
+            - [backend.tar](https://ourcompany.com/repo/backend.tar)
