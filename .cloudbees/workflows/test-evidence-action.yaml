@@ -6,42 +6,67 @@ on:
 jobs:
   build:
     steps:
-      - name: Evidence markdown examples
-        uses: cloudbees-io/publish-evidence-item
+      - uses: cloudbees-io/publish-evidence-item
+        name: Evidence markdown examples
         with:
-          content: |
+          content: >
             ## Test markup and property rendering
+
             - Run ID: ${{ cloudbees.run_id }}
+
             - Color test: <span style="color:green">This text should be green</span>
+
             - [backend.tar](https://ourcompany.com/repo/backend.tar)
 
 
+
             1. 🌡 Preheat oven to 325°F
+
             1. 🍪 Drop cookie dough
+
             1. ⏰ Bake for 15 min
 
+
             Line\
+
             Break
+
 
             &#124;
 
+
             ```
+
             jobs:
               build:
                 steps:
                 - Compile
             ```
 
+
             | Month    | Savings |
+
             | -------- | ------- |
+
             | January  | $250    |
+
             | February | $80     |
+
             | March    | $420    |
+
 
             > Context and memory play
 
+
             - **bold text**
+
             - _italics_
+
             - ~~strike through~~
 
+
             ![Sonny and Mariel high fiving.](https://content.codecademy.com/courses/learn-cpp/community-challenge/highfive.gif)
+      - uses: cloudbees-io/publish-evidence-item@v1
+        name: Another evidence step
+        with:
+          content: "- New evidence step"
