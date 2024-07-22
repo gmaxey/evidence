@@ -1,0 +1,28 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Documentation
+on:
+  push:
+    branches:
+      - "**"
+jobs:
+  build:
+    steps:
+      - uses: cloudbees-io/publish-evidence-item@v1
+        name: Publish evidence
+        with:
+          content: |-
+            ## Deployment results
+            - Application endpoint: (https://app.ourcompany.com/qa)
+            - Artifacts
+              - [backend.jar](https://ourcompany.com/repo/app/v1.7/backend.jar)
+              - [frontend.jar](https://ourcompany.com/repo/app/v1.7/backend.jar)
+
+            ## Smoketest results
+
+            | Test    | Runtime (m:s) | Result |
+            | -------- | ------- | -- |
+            | [FE1]()  | 1:15 | PASS    |
+            | [BE2]() | 10:05 |PASS     |
+            | [INT1]()    | 15:15 |**FAIL**    |
+            | [INT2]()    | 20:10* |_RUNNING_    |
