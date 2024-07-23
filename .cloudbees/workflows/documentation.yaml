@@ -11,7 +11,7 @@ jobs:
         with:
           content: |-
             ## Deployment results
-            - Application endpoint: (https://app.ourcompany.com/qa)
+            - Application endpoint: https://app.ourcompany.com/qa
             - Artifacts
               - [backend.jar](https://ourcompany.com/repo/app/v1.7/backend.jar)
               - [frontend.jar](https://ourcompany.com/repo/app/v1.7/backend.jar)
