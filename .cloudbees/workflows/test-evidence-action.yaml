@@ -11,7 +11,7 @@ jobs:
         uses: cloudbees-io/publish-evidence-item
         with:
           content: |
-            Step: ${{ cloudbees.step_id }}
+            Step: ${{ cloudbees.run_id }}
             
             ## List
             - Run ID: ${{ cloudbees.run_id }}
