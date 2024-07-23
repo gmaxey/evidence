@@ -44,4 +44,4 @@ jobs:
             - _italics_
             - ~~strike through~~
 
-            ![CloudBees](https://www.cloudbees.com/)
+            ![CloudBees Platform](https://www.cloudbees.com/videos/new-cloud-native-devsecops-platform-training-creating-your-first-component)
