@@ -65,7 +65,7 @@ jobs:
             - ~~strike through~~
 
 
-            ![CloudBees Platform](https://www.cloudbees.com/videos/new-cloud-native-devsecops-platform-training-creating-your-first-component)
+            ![CloudBees Platform](https://images.ctfassets.net/vtn4rfaw6n2j/1XFoZ95AdPdToTZvmwCQqt/d48c4fc0ebcf85a0dae952fc7ce5378a/CPEMap_Zoom.gif)
       - uses: cloudbees-io/publish-evidence-item@v1
         name: Second evidence step
         with:
