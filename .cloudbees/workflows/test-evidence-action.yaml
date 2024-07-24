@@ -10,7 +10,7 @@ jobs:
         name: Evidence markdown examples
         id: evidence_step
         with:
-          content: >
+          content: |
             Step: ${{ cloudbees.run_id }}
             ## List
             - Run ID: ${{ cloudbees.run_id }}
