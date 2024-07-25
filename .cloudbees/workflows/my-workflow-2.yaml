@@ -17,8 +17,6 @@ jobs:
         name: some evidence
         with:
           content: |-
-            # title
-            list of stuff
-            1 value
-            1 another thing
-            ${{ cloudbees.run_id}}
+            # Name of the evidence
+            - output 1
+            - output 2
