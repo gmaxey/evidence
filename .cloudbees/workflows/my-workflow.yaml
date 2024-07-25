@@ -17,3 +17,10 @@ jobs:
           content: |-
             1. line 1
             2. line 2 **bold**
+      - uses: cloudbees-io/publish-evidence-item@v1
+        name: Another evidence push
+        with:
+          content: |-
+            # A header
+            - line 1
+            - line 2
