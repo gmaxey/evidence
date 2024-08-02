@@ -1,0 +1,22 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Default workflow
+on:
+  push:
+    branches:
+      - "**"
+  workflow_dispatch: {}
+jobs:
+  build:
+    steps:
+      - uses: docker://golang:1.20.3-alpine3.17
+        name: Say hello
+        shell: sh
+        run: |
+          echo "hello world"
+      - uses: cloudbees-io/publish-evidence-item@v1
+        name: Publish workflow evidence
+        with:
+          content: |-
+            # Sample Evidence output
+            - Workflow ID: ${{ cloudbees.run_id }}
