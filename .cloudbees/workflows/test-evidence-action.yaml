@@ -11,7 +11,6 @@ jobs:
         id: evidence_step
         with:
           content: >-
-            Step: ${{ cloudbees.run_id }}
             ## List
             - Run ID: ${{ cloudbees.run_id }}
             - [backend.tar](https://ourcompany.com/repo/backend.tar)
@@ -38,12 +37,13 @@ jobs:
 
             > Quoted text
 
-            ## Format
+            ## Formating
             - **bold text**
             - _italics_
             - ~~strike through~~
 
             ![CloudBees Platform](https://images.ctfassets.net/vtn4rfaw6n2j/1XFoZ95AdPdToTZvmwCQqt/d48c4fc0ebcf85a0dae952fc7ce5378a/CPEMap_Zoom.gif)
+            
       - uses: cloudbees-io/publish-evidence-item@v1
         name: Second evidence step
         with:
