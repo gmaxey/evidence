@@ -9,4 +9,4 @@ jobs:
       - name: Call instrumented action
         uses: cloudbees-io/publish-evidence-item/instrumented-action-example
         with:
-          in: Some text to pass on
+          input1: Some text to pass on
