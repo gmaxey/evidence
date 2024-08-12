@@ -84,3 +84,7 @@ jobs:
         name: Forth evidence step
         with:
           content: "# Forth evidence item"
+      - uses: cloudbees-io/publish-evidence-item@v1
+        name: Fifth evidence
+        with:
+          content: "# 5th Evidence"
