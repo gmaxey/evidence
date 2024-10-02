@@ -1,0 +1,17 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: matrix
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    example_matrix:
+      strategy:
+        matrix:
+          version:
+            - 10
+            - 12
+            - 14
+          os:
+            - ubuntu-latest
+            - windows-latest
