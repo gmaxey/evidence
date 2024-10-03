@@ -27,6 +27,5 @@ jobs:
       - uses: cloudbees-io/publish-evidence-item@v1
         with:
           content: |-
-            [wf1](https://cloudbees.io/orgs/cloudbees/components/runs/f6908ca9-cb8b-496b-a30a-9803535bd18f/cfba7812-f16a-4dec-b887-fca1f9f72186/deac77f4-c2ba-41a9-9754-759fd82445d6/1?componentId=f6908ca9-cb8b-496b-a30a-9803535bd18f&workflowId=cfba7812-f16a-4dec-b887-fca1f9f72186&organizationId=77f88258-7aa3-45bf-47c6-d869838d9770 )
-
-            [wf2](https://cloudbees.io/orgs/cloudbees/components/runs/f6908ca9-cb8b-496b-a30a-9803535bd18f/a0340d40-b098-4e5a-a7b4-33535b6b9f56/176c1293-e871-41fc-9cde-cd4df2f17a5f/1?componentId=f6908ca9-cb8b-496b-a30a-9803535bd18f&workflowId=a0340d40-b098-4e5a-a7b4-33535b6b9f56&organizationId=77f88258-7aa3-45bf-47c6-d869838d9770 )
+            - [wf1](https://cloudbees.io/orgs/cloudbees/components/runs/f6908ca9-cb8b-496b-a30a-9803535bd18f/cfba7812-f16a-4dec-b887-fca1f9f72186/deac77f4-c2ba-41a9-9754-759fd82445d6/1?componentId=f6908ca9-cb8b-496b-a30a-9803535bd18f&workflowId=cfba7812-f16a-4dec-b887-fca1f9f72186&organizationId=77f88258-7aa3-45bf-47c6-d869838d9770 )
+            - [wf2](https://cloudbees.io/orgs/cloudbees/components/runs/f6908ca9-cb8b-496b-a30a-9803535bd18f/a0340d40-b098-4e5a-a7b4-33535b6b9f56/176c1293-e871-41fc-9cde-cd4df2f17a5f/1?componentId=f6908ca9-cb8b-496b-a30a-9803535bd18f&workflowId=a0340d40-b098-4e5a-a7b4-33535b6b9f56&organizationId=77f88258-7aa3-45bf-47c6-d869838d9770 )
