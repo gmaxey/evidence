@@ -1,0 +1,15 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: multiworkflow
+on:
+  push:
+    branches:
+      - "**"
+jobs:
+  build:
+    steps:
+      - uses: cloudbees-io/publish-evidence-item@v1
+        with:
+          content: |-
+            - [workflow1](https://cloudbees.io/path/wf1/run)
+            - [workflow1](https://cloudbees.io/path/wf1/run)
