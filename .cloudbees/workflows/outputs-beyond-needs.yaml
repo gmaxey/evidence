@@ -6,7 +6,7 @@ on:
 jobs:
   A:
     outputs:
-      Aout: ${{ steps.outputs.out.Aout }}
+      Aout: ${{ steps.out.outputs.Aout }}
     steps:
       - name: Say hello
         id: out
@@ -16,7 +16,7 @@ jobs:
           echo "Aout" > "$CLOUDBEES_OUTPUTS/Aout"
   B:
     outputs:
-      Aout: ${{ steps.outputs.out.Aout }}
+      Aout: ${{ steps.out.outputs.Aoutt }}
     needs: A
     steps:
       - name: Say hello
