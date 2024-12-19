@@ -16,7 +16,7 @@ jobs:
           echo "Aout value" > "$CLOUDBEES_OUTPUTS/Aout"
   B:
     outputs:
-      Aout: ${{ steps.out.outputs.Aoutt }}
+      Aout: ${{ steps.out.outputs.Aout }}
     needs: A
     steps:
       - name: Say hello
