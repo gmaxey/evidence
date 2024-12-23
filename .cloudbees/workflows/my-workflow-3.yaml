@@ -13,4 +13,4 @@ jobs:
           echo ${{ cloudbees.run_id }}
           curl -X 'GET'  ${CLOUDBEES_API_URL}/v1/resources/${{ cloudbees.run_id }}?parents=true \
           --header 'Content-Type: application/json' \
-          --header 'Authorization: Bearer ${{ cloudbees.api.token }}')
+          --header 'Authorization: Bearer ${{ cloudbees.api.token }}'
