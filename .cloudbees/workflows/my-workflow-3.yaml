@@ -1,12 +1,8 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
-
 on:
-  push:
-    branches:
-      - '**'
-
+  workflow_dispatch:
 jobs:
   build:
     steps:
@@ -17,4 +13,3 @@ jobs:
           curl -X 'GET'  ${CLOUDBEES_API_URL}/v1/resources/${{ cloudbees.run_id }}?parents=true \
           --header 'Content-Type: application/json' \
           --header 'Authorization: Bearer ${{ cloudbees.api.token }}')
-
