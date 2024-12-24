@@ -11,6 +11,6 @@ jobs:
         shell: bash
         run: |
           echo ${{ cloudbees.run_id }}
-          curl -X 'GET'  ${{cloudbees.api.url}}/v1/resources/${{ cloudbees.api }}?parents=true \
+          curl -X 'GET'  ${{cloudbees.api.url}}/v1/resources/8f2a2b97-7de5-4b00-b8f7-e964add3c585?parents=true \
           --header 'Content-Type: application/json' \
           --header 'Authorization: Bearer ${{ secrets.PAT }}'
