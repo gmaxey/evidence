@@ -3,10 +3,16 @@ kind: workflow
 name: get-workflow-details
 on:
   workflow_dispatch:
+
+env:
+  PAT: "${{ secrets.PAT }}"
+  CLOUDBEES_API_URL: ${{ cloudbees.api.url }}
+
 jobs:
   build:
     steps:
       - name: Get workflow details
+        id: orgcomp
         uses: docker://figured/alpine-curl-jq-bash
         shell: bash
         run: |
@@ -17,3 +23,12 @@ jobs:
           echo "$REPSONSE" | jq -c -r '.parents[] | select(.type=="RESOURCE_TYPE_ORGANIZATION") | .id' | head -1 > "$CLOUDBEES_OUTPUTS/orgId" | tr -d '\n'
           echo "$REPSONSE" | jq -c -r '.parents[] | select(.type=="RESOURCE_TYPE_REPOSITORY") | .id' > "$CLOUDBEES_OUTPUTS/componentId" | tr -d '\n'
           echo "resources/$(cat $CLOUDBEES_OUTPUTS/orgId)/services/$(cat $CLOUDBEES_OUTPUTS/componentId)"
+      - name: Get component IDs from the application
+        id: components
+        uses: docker://figured/alpine-curl-jq-bash
+        shell: bash
+        run: |
+          echo curl -X 'GET' ${CLOUDBEES_API_URL}/v1/resources/${{ steps.orgcomp.outputs.orgId}}/services/${{ steps.orgcomp.outputs.componentId}}    --header 'Content-Type: application/json'       --header "Authorization: Bearer $PAT"
+          curl -X 'GET' ${CLOUDBEES_API_URL}/v1/resources/${{ steps.orgcomp.outputs.orgId}}/services/${{ steps.orgcomp.outputs.componentId}}    --header 'Content-Type: application/json'       --header "Authorization: Bearer $PAT"
+          COMPONENT_IDS="$(curl -X 'GET' ${CLOUDBEES_API_URL}/v1/resources/${{ steps.orgcomp.outputs.orgId}}/services/${{ steps.orgcomp.outputs.componentId}}    --header 'Content-Type: application/json'       --header "Authorization: Bearer $PAT" | jq -r '.service.linkedComponentIds[]')"
+          echo $COMPONENT_IDS > "$CLOUDBEES_OUTPUTS/componentIds"     
